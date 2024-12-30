@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for Firefox */
+        .no-scrollbar {
+            scrollbar-width: none;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-stone-200 p-2 ">
+    <div class="no-scrollbar absolute w-full overflow-x-hidden  md:w-1/2 h-auto max-h-[500px] overflow-y-scroll">
+        <div class=" fixed border-b-4 border-white w-full md:w-1/2 bg-green-500 h-auto  z-50 p-2 ">
+            <h1 class="text-[30px] font-bold text-white text-start">My Todos</h1>
+            <form id="searchTodos" class="flex justify-center" action="">
+                <input
+                    class="w-2/3 outline-none py-1  px-3  text-sm font-semibold rounded-md placeholder:text-stone-400 text-stone-500"
+                    type="search" name="search" id="search" placeholder="Search Todos">
+            </form>
+        </div>
+        <div class="w-full pt-24 bg-white">
+            <ul id="list-item" class="space-y-2 text-stone-500 bg-stone-50">
+            </ul>
+        </div>
+        <div class="w-full md:w-1/2 fixed bottom-5 border-t-4 border-white bg-green-500 h-auto p-2">
+            <form id="addTodo" class="flex flex-col items-center" action="">
+                <input
+                    class="w-2/3 outline-none py-1  px-3  text-sm font-semibold rounded-md placeholder:text-stone-400 text-stone-500"
+                    type="text" name="add" id="add" placeholder="Add a New Todo">
+                <button
+                    class="w-1/6 mt-2 py-1 font-bold text-white bg-orange-500 rounded-lg hover:bg-orange-700">Add</button>
+            </form>
+        </div>
+    </div>
+    <script src="todo.js"></script>
+</body>
+
+</html>
